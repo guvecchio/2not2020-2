@@ -14,12 +14,18 @@ vetor1.push('laranja')
 vetor1.push('limão')
 console.log(vetor1)
 
+console.log('............................................')
+
 // Forma 2: unshift() --> adiciona novos elementos NO INICIO do vetor
 vetor1.unshift('maçã')
 console.log(vetor1)
 
+console.log('............................................')
+
 vetor1.unshift('abacaxi')
 console.log(vetor1)
+
+console.log('............................................')
 
 // Forma 3: splice()
 // 1º Parâmetro: a posição de inserção
@@ -28,8 +34,12 @@ console.log(vetor1)
 vetor1.splice(2, 0, 'morango')
 console.log(vetor1)
 
+console.log('............................................')
+
 vetor1.splice(1, 0, 'jaca')
 console.log(vetor1)
+
+console.log('............................................')
 
 // Remoção de elementos do vetor
 
@@ -38,10 +48,14 @@ console.log(vetor1)
 let x1 = vetor1.pop()
 console.log(vetor1, x1)
 
+console.log('............................................')
+
 // Forma 2: shift() --> retira o PRIMEIRO elemento do vetor
 
 let x2 = vetor1.shift()
 console.log(vetor1, x2)
+
+console.log('............................................')
 
 // Forma 3: splice()
 // 1º Parâmetro: a posição para remoção
@@ -51,9 +65,13 @@ console.log(vetor1, x2)
 let x3 = vetor1.splice(2, 1)
 console.log(vetor1, x3)
 
+console.log('............................................')
+
 // o slice() serve também para fazer substituições
 vetor1.splice(1, 1, 'pera')
 console.log(vetor1)
+
+console.log('............................................')
 
 // Colocando mais alguns elementos no vetor
 
@@ -81,5 +99,23 @@ console.log('............................................')
 for(let fruta of vetor1) { 
     console.log(fruta)
 }
+
+console.log('............................................')
+
+// Forma 3: forEach()
+// O argumento do forEach() é uma função que recebe cada elemento do vetor para fazer algo com ele
+
+// Argumento como arrow function
+vetor1.forEach(fruta => console.log(fruta))
+
+console.log('............................................')
+
+// Argumento como função tradicional
+vetor1.forEach(function(fruta){
+    console.log(fruta)
+})
+
+console.log('............................................')
+
 
 
