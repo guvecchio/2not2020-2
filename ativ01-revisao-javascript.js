@@ -15,6 +15,8 @@
 
 */
 
+console.log('xxxxxxxxxxxx - ECERCÍCIO 1 - xxxxxxxxxxxxxxxxx')
+
 let estadosNe = []
 
 let estado1 = {
@@ -24,12 +26,12 @@ let estado1 = {
    populacao: 2278308
 }
 
-estadosNe.push(estado1)
-
 /*
    1) Crie objetos para os demais Estados, segundo o modelo acima, e acrescente-os
       ao vetor estadosNe usando push().
 */
+
+estadosNe.push(estado1)
 
 let estado2 = {
    nome: 'Alagoas',
@@ -105,13 +107,15 @@ estadosNe.push(estado9)
 
 console.log(estadosNe)
 
-console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+console.log('xxxxxxxxxxxx - ECERCÍCIO 2 e 3 - xxxxxxxxxxxxxxxxx')
 
 /*
    2) Escreva uma arrow function que receba dois parâmetros, área e população, e
       calcule a densidade demográfica retornando o resultado da divisão da
       segunda pela primeira. 
 */
+
+let dd = (a, p) => p / a
 
 /*
    3) Percorra o vetor estadosNe usando um for tradicional. Para cada estado,
@@ -123,13 +127,36 @@ console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
 */
 
+for(let i = 0; i < estadosNe.length; i++){
+    delete estadosNe[i].sigla
+    estadosNe[i]['densidade demográfica'] = dd(estadosNe[i].area, estadosNe[i].populacao)
+}
+console.log(estadosNe)
+
+console.log('xxxxxxxxxxxx - ECERCÍCIO 4 e 5 - xxxxxxxxxxxxxxxxx')
+
 /* 4) Escreva uma arrow function que receba um objeto. Na função, use for..in
       para extrair as propriedades e seus valores e exibi-los com console.log().
 
 */
 
+console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
+let at = (objeto) =>{
+    for(let atrib in objeto){
+        console.log(`Atributo: ${atrib}; Valor: ${objeto[atrib]}`)
+    }
+} 
+
 /* 5) Percorra o vetor estadosNe usando for..of. Para cada objeto no vetor,
       invoque a função escrita em 4) para exibi-lo.
+*/
+
+    for(let objeto of estadosNe) { 
+        console.log(at(objeto))
+    } 
+
+    console.log('xxxxxxxxxxxx - ECERCÍCIO 6 - xxxxxxxxxxxxxxxxx')
 
 /*
    6)
@@ -143,3 +170,17 @@ console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
          já existentes, e assim por diante.
 
 */
+
+    console.log('xxxxxxxxxx - LISTA ORDENADA - xxxxxxxxxx')
+
+    let ordem = []
+    ordem.push(estado1['nome'])
+    ordem.unshift(estado2['nome'])
+    ordem.splice(1, 0, estado3['nome'])
+    ordem.splice(1, 0, estado4['nome'])
+    ordem.splice(2, 0, estado5['nome'])
+    ordem.splice(1, 0, estado6['nome'])
+    ordem.splice(4, 0, estado7['nome'])
+    ordem.splice(2, 0, estado8['nome'])
+    ordem.splice(1, 0, estado9['nome'])
+    console.log(ordem)
