@@ -17,7 +17,7 @@ function BublleSort(vetor) {
         passadas++
         trocas = 0
 
-        // Percurso do cetor até a PENÚLTIMA POSIÇÃO (length - 2)
+        // Percurso do vetor até a PENÚLTIMA POSIÇÃO (length - 2)
         for(let i = 0; i <= vetor.length - 2; i++) {
             comparacoes++
             // Comprando o elemento da posição atual (i) com o elemento da frente (i + 1)
