@@ -69,7 +69,7 @@ console.log(nomesCandidatos)
     Teste com o localeCompare()
     Só oos primeiros 1000 candidatos
 
-cont cadidatos1000 = candidatos.slice(0, 999)
+const cadidatos1000 = candidatos.slice(0, 999)
 
 console.time('TESTE CANDIDATOS 1000')
 // localeCompare() faz corretamente a ordenação considerando os acentos, mas é muito mais lento do que
