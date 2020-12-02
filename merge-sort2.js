@@ -13,10 +13,10 @@ function mergeSort(vetor, fnComp) {
     function mesclarVetores(vetEsq, vetDir) {
         let vetRes = [], posEsq = 0, posDir = 0, sobra
 
-        while(posEsq < vetEsq.length && posDir < vetDir.length) {
+        while (posEsq < vetEsq.length && posDir < vetDir.length) {
             comparacoes++
             // if(vetEsq[posEsq] < vetDir[posDir]) {
-            if(fnComp(vetDir[posDir], vetEsq[posEsq])) { // Parâmetro invertidos
+            if (fnComp(vetDir[posDir], vetEsq[posEsq])) { // Parâmetro invertidos
                 vetRes.push(vetEsq[posEsq])
                 posEsq++
             }
@@ -25,21 +25,21 @@ function mergeSort(vetor, fnComp) {
                 posDir++
             }
         }
-        
+
         // slice(): retorna um subvetor a partir da posição espeficada até o fim
-        
+
         // Sobra no vetor da esquerda
-        if(posEsq < posDir) sobra = vetEsq.slice(posEsq)
+        if (posEsq < posDir) sobra = vetEsq.slice(posEsq)
         // Sobra no vetor da direita
         else sobra = vetDir.slice(posDir)
 
         //console.log({posEsq, posDir, sobra})
-        
+
         // A sobra é acrescentada ao resultado final
         return vetRes.concat(sobra)
     }
-    
-    if(vetor.length > 1) {
+
+    if (vetor.length > 1) {
         // Encontra o meio do vetor
         let meio = Math.floor(vetor.length / 2)
         let vetEsq = vetor.slice(0, meio) // A posição do meio NÃO entra
@@ -50,7 +50,7 @@ function mergeSort(vetor, fnComp) {
         vetDir = mergeSort(vetDir, fnComp)
         //console.log('DEPOIS:', {vetEsq, vetDir})
         juncoes++
-        return mesclarVetores(vetEsq, vetDir)        
+        return mesclarVetores(vetEsq, vetDir)
     }
     return vetor
 }
@@ -75,3 +75,6 @@ const candidatos = require('./dados/candidatos-2018')
 console.time('Teste Candidatos')
 console.log(mergeSort(candidatos, (a, b) => a.NM_CANDIDATO > b.NM_CANDIDATO))
 console.timeEnd('Teste Candidatos')
+let memoria = process.memoryUsage().heapUsed / 1024 / 1024
+console.log('Memória usada (MB):', memoria)
+console.log({ comparacoes, divisoes, juncoes })

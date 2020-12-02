@@ -23,7 +23,6 @@ function selectionSort(vetor, fnComp) {
 
 const covid19 = require('./dados/covid-19')
 
-/*
 
 // ************COM 1000 REGISTROS DE AMOSTRA************
 const covid1000 = covid19.slice(0, 999)
@@ -96,7 +95,7 @@ console.log('Memória usada (MB):', process.memoryUsage().heapUsed / 1024 / 1024
 console.log("xxxxxxxxxxxxxxx FIM COM 100000 SelectionSort xxxxxxxxxxxxxxx")
 process.exit(0)
 // ************COM TODOS REGISTROS************
-*/
+
 console.time('COVID TODOS')
 
 selectionSort(covid19, (a, b) => {
